@@ -1,0 +1,122 @@
+﻿<div ng-controller="finishProductWithFormulaController as vm">
+    <div class="row">
+        <form id="frmNewFinishProductWithFormula" role="form" name="newFinishProductWithFormula" class="form-horizontal" novalidate>
+            <fieldset>
+                <legend>Create Finish Product With Formula</legend>
+                <input id="finishProductId" ng-model="vm.finishProduct.id" type="hidden" />
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="brandType">Brand</label>
+                            <select id="brandType" name="sltBrandType" ng-model="vm.selectedBrand" ng-options=" option.brandName for option in vm.brands track by option.id" required>
+                                <option value="">Select Brand</option>
+                            </select>
+                            <span class="error" ng-show="newBrandForm.sltBrandType.$dirty && newBrandForm.sltBrandType.$invalid">Select Brand Type</span>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="finishProductProductName">Product Name</label>
+                            <input id="finishProductProductName" ng-model="vm.finishProduct.productName" class="form-control" placeholder="Enter Product Name Here" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="productGrade">Product Grade</label>
+                            <select id="productGrade" ng-model="vm.selectedProductGrade" ng-options="option.gradeName for option in vm.productGrades track by option.id">
+                                <option value="">---Please select---</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="productApi">Product API</label>
+                            <select id="productApi" ng-model="vm.selectedProductApi" ng-options="option.apiName for option in vm.productApis track by option.id">
+                                <option value="">---Please select---</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="productCategory">Product Category</label>
+                            <select id="productCategory" ng-model="vm.selectedProductCategory" ng-options="option.categoryName for option in vm.productCategories track by option.id">
+                                <option value="">---Please select---</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="packSize">Pack Size</label>
+                            <input id="packSize" ng-model="vm.finishProduct.packSize" class="form-control" placeholder="Enter Pack Size Here" required />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="multiplier">Multiplier</label>
+                            <input id="multiplier" ng-model="vm.finishProduct.multiplier" class="form-control" placeholder="Enter Multiplier Here" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="productUnit">Product Unit</label>
+                            <select id="productUnit" ng-model="vm.selectedProductUnit" ng-options="option.unitName for option in vm.productUnits track by option.id">
+                                <option value="">---Please select---</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="mrp">MRP</label>
+                            <input id="mrp" ng-model="vm.finishProduct.mrp" class="form-control" placeholder="Enter MRP Here" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="reOrderPoint">Re Order Point</label>
+                            <input id="reOrderPoint" ng-model="vm.finishProduct.reOrderPoint" class="form-control" placeholder="Enter Re Order Point Here" required />
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="row">
+            <form id="frmNewFinishProductFormulaItem" role="form" name="newFinishProductFormulaItemForm" class="form-inline" novalidate>
+                <input id="itemId" ng-model="vm.finishProductFormulaItem.id" type="hidden" />
+                <fieldset>
+                    <legend>Add Raw Material Item for Formula</legend>
+                    <div class="form-group" ng-class="{ 'has-error' : frmNewFinishProductFormulaItem.drpItemName.$invalid && !frmNewFinishProductFormulaItem.drpItemName.$pristine }">
+                        <label for="itemName">Item Name</label>
+                        <select id="itemName" name="drpItemName" ng-model="vm.selectedRawMaterial" ng-options="option.fullProductName for option in vm.rawMaterials track by option.id" required>
+                            <option value="">---Please select---</option>
+                        </select>
+                        <div class="help-block" ng-messages="frmNewFinishProductFormulaItem.drpItemName.$error" ng-if="frmNewFinishProductFormulaItem.drpItemName.$touched">
+                            <p ng-message="required">Please select an item.</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="percentage">Percentage</label>
+                        <input id="percentage" ng-model="vm.finishProductFormulaItem.percentage" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <button ng-click="newFinishProductFormulaItemForm.$valid && vm.addToGrid()" type="submit" class="btn btn-primary" style="margin:10px 0 10px 0">Add To Grid</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>        
+        <div class="row">
+            <fieldset>
+                <legend>Finish Product Formula</legend>
+            </fieldset>
+            <div id="formulaItemGrid" ui-grid="vm.gridOptions" ui-grid-selection class="uigrid"></div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <button ng-click="vm.addNewFinishProductWithFormula()" ng-disabled="vm.disableSaveNew" class="btn btn-primary">Save</button>
+    </div>
+</div>

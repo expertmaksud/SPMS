@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="en">
+  <texts>
+    <text name="HomePage" value="Home page" />
+    <text name="About" value="About" />
+    <text name="Administration" value="Administration"></text>
+    <text name="Settings" value="Settings" />
+    <text name="Brands" value="Brands" />
+    <text name="Vendors" value="Vendors" />
+    <text name="Freight" value="Freight" />
+    <text name="WellcomeMessage" value="Oriental Oil Company Limited!" />
+    <text name="Home_ThisIsATemplate" value="Purchase, Sales, Warehouse and Invoice Management System" />
+    <text name="Home_AspNetDescription" value="ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that enables a clean separation of concerns and that gives you full control over markup for enjoyable, agile development." />
+    <text name="Home_AspNetBoilerplateDescription" value="ASP.NET Boilerplate is a framework to build web based applications with best practices and most popular tools." />
+    <text name="LearnMore" value="Learn more" />
+    <text name="Home_AngularDescription" value="AngularJs is a Single-Page Application framework by Google. It lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop." />
+    <text name="AboutFormat" value="About {0}" />
+    <text name="About_AspNetBoilerplateDescription" value="ASP.NET Boilerplate is a starting point for new web applications with best practices and most popular tools! ASP.NET Boilerplate provides an infrastructure for &lt;strong&gt;NLayer architecture&lt;/strong&gt; and &lt;strong&gt;Domain Driven Design&lt;/strong&gt;." />
+    <text name="ForMoreInformation" value="For more information" />
+    <text name="BrandCreatedMessage" value="Brand {0} has been created successfully." />
+    <text name="BrandUpdatedMessage" value="Brand {0} has been updated successfully." />
+    <text name="VendorCreatedMessage" value="Vendor {0} has been created successfully." />
+    <text name="VendorUpdatedMessage" value="Vendor {0} has been updated successfully." />
+    <text name="Zones" value="Zones" />
+    <text name="ZoneCreatedMessage" value="Zone {0} has been created successfully." />
+    <text name="ZoneDeletedMessage" value="Zone {0} has been Deleted successfully." />
+    <text name="ProductGrades" value="Product Grades" />
+    <text name="ProductGradeCreatedMessage" value="Product Grade {0} has been created successfully." />
+    <text name="ProductGradeDeletedMessage" value="Product Grade {0} has been Deleted successfully." />
+    <text name="ProductCategories" value="Product Categories" />
+    <text name="ProductCategoryCreatedMessage" value="Product Category {0} has been Created successfully." />
+    <text name="ProductCategoryUpdatedMessage" value="Product Category {0} has been Updated successfully." />
+    <text name="ProductCategoryDeletedMessage" value="Product Category {0} has been Deleted successfully." />
+    <text name="Freights" value="Freights" />
+    <text name="FreightCreatedMessage" value="Freight {0} has been Created successfully." />
+    <text name="FreightUpdatedMessage" value="Freight {0} has been Updated successfully." />
+    <text name="FreightDeletedMessage" value="Freight {0} has been Deleted successfully." />
+    <text name="ProductUnits" value="Product Units" />
+    <text name="ProductUnitCreatedMessage" value="Product Unit {0} has been Created successfully." />
+    <text name="ProductUnitUpdatedMessage" value="Product Unit {0} has been Updated successfully." />
+    <text name="ProductUnitDeletedMessage" value="Product Unit {0} has been Deleted successfully." />
+    <text name="RawMaterialTypes" value="Raw Material Types" />
+    <text name="RawMaterialTypeCreatedMessage" value="Raw Material Type {0} has been Created successfully." />
+    <text name="RawMaterialTypeUpdatedMessage" value="Raw Material Type {0} has been Updated successfully." />
+    <text name="RawMaterialTypeDeletedMessage" value="Raw Material Type {0} has been Deleted successfully." />
+    <text name="ProductApis" value="Product Apis" />
+    <text name="ProductApiCreatedMessage" value="Product API {0} has been Created successfully." />
+    <text name="ProductApiUpdatedMessage" value="Product API {0} has been Updated successfully." />
+    <text name="ProductApiDeletedMessage" value="Product API {0} has been Deleted successfully." />
+    <text name="Distributors" value="Distributors" />
+    <text name="DistributorCreatedMessage" value="Distributor {0} has been Created successfully." />
+    <text name="DistributorUpdatedMessage" value="Distributor {0} has been Updated successfully." />
+    <text name="DistributorDeletedMessage" value="Distributor {0} has been Deleted successfully." />
+    <text name="RawMaterials" value="Raw Materials" />
+    <text name="RawMaterialCreatedMessage" value="Raw Material {0} has been Created successfully." />
+    <text name="RawMaterialUpdatedMessage" value="Raw Material {0} has been Updated successfully." />
+    <text name="RawMaterialDeletedMessage" value="Raw Material {0} has been Deleted successfully." />
+    <text name="Purchase" value="Purchase" />
+    <text name="CreatePurchase" value="New Purchase" />
+    <text name="PurchaseCreatedMessage" value="Purchase {0} has been Created successfully." />
+    <text name="PurchaseUpdatedMessage" value="Purchase {0} has been Updated successfully." />
+    <text name="PurchaseDeletedMessage" value="Purchase {0} has been Deleted successfully." />
+    <text name="PurchaseList" value="Purchase List" />   
+    <text name="FinishProducts" value="Finish Products" />
+    <text name="FinishProductList" value="Finish Product List" />
+    <text name="FinishProductCreatedMessage" value="Finish Product {0} has been Created successfully." />
+    <text name="FinishProductUpdatedMessage" value="Finish Product {0} has been Updated successfully." />
+    <text name="FinishProductDeletedMessage" value="Finish Product {0} has been Deleted successfully." />   
+    <text name="PurchaseItemCreatedMessage" value="Purchase item {0} has been Created successfully." />
+    <text name="PurchaseItemUpdateMessage" value="Purchase item {0} has been Updated successfully." />
+    <text name="PurchaseItemDeleteMessage" value="Purchase item {0} has been deleted successfully." />
+    <text name="Warehouses" value="Warehouses" />
+    <text name="WarehouseCreatedMessage" value="Warehouse {0} has been Created successfully." />
+    <text name="WarehouseUpdatedMessage" value="Warehouse {0} has been Updated successfully." />
+    <text name="WarehouseDeletedMessage" value="Warehouse {0} has been Deleted successfully." />
+    <text name="Inventory" value="Inventory" />
+    <text name="StockReceive" value="Stock Receive"/>
+    <text name="StockCreateMessage" value="Stock for {0} has been received successfully."></text>
+    <text name="NewFinishProduct" value="New Finish Product"></text>
+    <text name="Production" value="Production" ></text>
+    <text name="Sales" value="Sales" ></text>
+    <text name="Finance" value="Finance"></text>
+  </texts>
+</localizationDictionary>

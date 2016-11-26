@@ -1,0 +1,16 @@
+﻿<div ng-controller="purchaseListController as vm">
+    <div class="row">
+        <a href="/#/purchase/new" class="btn btn-primary" role="button">Add New</a>
+        
+       </div>
+    <div class="row">
+        <legend>Purchase List</legend>
+    </div>
+    <div class="row">
+        <button ng-click="vm.editSelectedRow()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Edit Selected Row</button>
+        <button ng-click="vm.displayDetails()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Display Detail</button>
+    </div>
+    <div class="row">
+        <div id="purchaseGrid" ui-grid="vm.gridOptions" ui-grid-selection class="uigrid"></div>
+    </div>
+</div>

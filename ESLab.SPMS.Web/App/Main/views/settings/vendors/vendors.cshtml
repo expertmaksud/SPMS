@@ -1,0 +1,69 @@
+﻿<div ng-controller="vendorController as vm">
+    <div class="row">
+
+
+        <form id="frmNewVendor" role="form" name="newVendorForm" class="form-horizontal" novalidate>
+            <fieldset>
+                <legend>Add Vendor</legend>
+                <input id="vendorId" ng-model="vm.vendor.id" type="hidden" />
+                <div class="form-group">
+                    <label for="vendorCode">Code</label>
+                    <input id="vendorCode" name="code" ng-model="vm.vendor.vendorCode" class="form-control" placeholder="Enter Vendor Code Here" required
+                           unique-code service-name="abp.services.app.vendor" />
+
+                </div>
+                <div class="form-group">
+                    <label for="vendorName">Name</label>
+                    <input id="vendorName" ng-model="vm.vendor.vendorName" class="form-control" placeholder="Enter Vendor Name Here" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="vendorAddress">Vendor Address</label>
+                    <input id="vendorAddress" ng-model="vm.vendor.vendorAddress" class="form-control" placeholder="Enter Vendor Address Here" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="vendorContactPerson">Vendor Contact Person</label>
+                    <input id="vendorContactPerson" ng-model="vm.vendor.vendorContactPerson" class="form-control" placeholder="Enter Vendor Contact Person Here" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="vendorContactNumber">Vendor Contact Number</label>
+                    <input id="vendorContactNumber" ng-model="vm.vendor.vendorContactNumber" class="form-control" placeholder="Enter Vendor Contact Number Here" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="vendorContactEmail">Vendor Contact Email</label>
+                    <input id="vendorContactEmail" ng-model="vm.vendor.vendorContactEmail" class="form-control" placeholder="Enter Vendor Contact Email Here" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="vendorWebsite">Vendor Website</label>
+                    <input id="vendorWebsite" ng-model="vm.vendor.vendorWebsite" class="form-control" placeholder="Enter Vendor Website Here" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="vendorFax">Vendor Fax</label>
+                    <input id="vendorFax" ng-model="vm.vendor.vendorFax" class="form-control" placeholder="Enter Vendor Fax Here" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="vendorBankDetails">Vendor Bank Details</label>
+                    <input id="vendorBankDetails" ng-model="vm.vendor.vendorBankDetails" class="form-control" placeholder="Enter Vendor Bank Details Here" required />
+                </div>
+
+                <button ng-click="vm.saveVendor()" ng-disabled="newVendorForm.$invalid" type="submit" class="btn btn-primary">Save</button>
+            </fieldset>
+        </form>
+        <p class="help-block" ng-show="newVendorForm.code.$error.unique">VendorCode is already taken.</p>
+    </div>
+    <div class="row">
+        <legend>All Vendors</legend>
+    </div>
+    <div class="row">
+        <button ng-click="vm.editSelectedRow()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Edit Selected Row</button>
+    </div>
+    <div class="row">
+        <div id="vendorGrid" ui-grid="vm.gridOptions" ui-grid-selection class="uigrid"></div>
+    </div>
+</div>

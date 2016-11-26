@@ -1,0 +1,79 @@
+﻿<div ng-controller="stockController as vm">
+    <div class="row">
+
+        <fieldset>
+            <legend>Purchase Items for (LC({{vm.purchase.lcNumber}})/PO({{vm.purchase.poNumber}})) </legend>
+            <input id="purchaseId" ng-model="vm.purchase.id" type="hidden" />
+        </fieldset>
+        <div id="purchaseItemGrid" ui-grid="vm.itemGridOptions" ui-grid-selection class="uigrid"></div>
+
+    </div>
+
+    <div class="row">
+        <form id="newStockForm" role="form" name="newStockForm" class="form-horizontal" novalidate>
+            <fieldset>
+                <legend>Add to WareHouse</legend>
+                <input id="purchaseId" ng-model="vm.purchase.id" type="hidden" />
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6" ng-class="{ 'has-error' : newStockForm.drpItem.$invalid && !newStockForm.drpItem.$pristine }">
+
+                            <label for="drpItem">Item </label>
+                            <select id="drpItem" ng-change="vm.itemSelectionChange()" name="drpItem" ng-model="vm.selectedItem" ng-options="option.fullProductName for option in vm.purchaseItems track by option.id" required>
+                                <option value="">---Please select---</option>
+                            </select>
+                            <div class="help-block" ng-messages="newStockForm.drpItem.$error" ng-if="newStockForm.drpItem.$touched">
+                                <p ng-message="required">Please select a Item.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6" ng-class="{ 'has-error' : newStockForm.sltWareHouse.$invalid && !newStockForm.sltWareHouse.$pristine }">
+                            <label for="sltWareHouse">Warehouse </label>
+                            <select id="sltWareHouse" name="sltWareHouse" ng-model="vm.selectedWareHouse" ng-options="option.warehouseName for option in vm.wareHouses track by option.id" required>
+                                <option value="">---Please select---</option>
+                            </select>
+                            <div class="help-block" ng-messages="newStockForm.sltWareHouse.$error" ng-if="newStockForm.sltWareHouse.$touched">
+                                <p ng-message="required">Please select a WareHouse.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6" ng-class="{ 'has-error' : newStockForm.stockType.$invalid && !newStockForm.stockType.$pristine }">
+                            <label for="stockType">Stock Type</label>
+                            <select id="stockType" name="stockType" ng-model="vm.selectedStockType" ng-options="option.name for option in vm.stockTypes track by option.id" required>
+                                <option value="">---Please select---</option>
+                            </select>
+                            <div class="help-block" ng-messages="newStockForm.stockType.$error" ng-if="newStockForm.stockType.$touched">
+                                <p ng-message="required">Stock Type is required.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6" ng-class="{ 'has-error' : newStockForm.quantity.$invalid && !newStockForm.quantity.$pristine }">
+                            <label for="quantity">Quantity</label>
+                            <input id="quantity" type="number" min="1" ng-model="vm.stock.receiveQuantity" class="form-control" placeholder="Enter Quantity" required />
+                            <div class="help-block" ng-messages="newStockForm.quantity.$error" ng-if="newStockForm.quantity.$touched">
+                                <p ng-message="required">Please provide quantity.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6" ng-if="vm.disableDensity === false" ng-class="{ 'has-error' : newStockForm.density.$invalid && !newStockForm.density.$pristine }">
+                            <label for="density">Density</label>
+                            <input id="density"   type="number" min="1" ng-model="vm.stock.density" class="form-control" placeholder="Enter Quantity" ng-required="true" />
+                            <div class="help-block" ng-messages="newStockForm.density.$error" ng-if="newStockForm.density.$touched">
+                                <p ng-message="required">Please provide density.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="row">
+        <button ng-click="vm.save()" ng-disabled="newStockForm.$invalid" class="btn btn-primary">Save</button>
+    </div>
+</div>

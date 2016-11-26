@@ -1,0 +1,66 @@
+﻿<div ng-controller="distributorController as vm">
+    <div class="row">
+        <form id="frmNewDistributor" role="form" name="newDistributorForm" class="form-horizontal" novalidate>
+            <fieldset>
+                <legend>Add Distributor</legend>
+                <input id="distributorId" ng-model="vm.distributor.id" type="hidden" />
+                <div class="form-group">
+                    <label for="distributorCode">Distributor Code</label>
+                    <input id="distributorCode" ng-model="vm.distributor.distributorCode" class="form-control" placeholder="Enter Distributor Code Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="distributorName">Distributor Name</label>
+                    <input id="distributorName" ng-model="vm.distributor.distributorName" class="form-control" placeholder="Enter Distributor Name Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="distributorAddress">Distributor Address</label>
+                    <input id="distributorAddress" ng-model="vm.distributor.distributorAddress" class="form-control" placeholder="Enter Distributor Address Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="distributorCity">Distributor City</label>
+                    <input id="distributorCity" ng-model="vm.distributor.distributorCity" class="form-control" placeholder="Enter Distributor City Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="distributorCountry">Distributor Country</label>
+                    <input id="distributorCountry" ng-model="vm.distributor.distributorCountry" class="form-control" placeholder="Enter Distributor Country Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="distributorContactPerson">Distributor Contact Person</label>
+                    <input id="distributorContactPerson" ng-model="vm.distributor.distributorContactPerson" class="form-control" placeholder="Enter Distributor Contact Person Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="distributorJobTitle">Distributor Job Title</label>
+                    <input id="distributorJobTitle" ng-model="vm.distributor.distributorJobTitle" class="form-control" placeholder="Enter Distributor Job Title Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="distributorMobileNumber">Distributor Mobile Number</label>
+                    <input id="distributorMobileNumber" ng-model="vm.distributor.distributorMobileNumber" class="form-control" placeholder="Enter Distributor Mobile Number Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="distributorContactEmail">Distributor Contact Email</label>
+                    <input id="distributorContactEmail" ng-model="vm.distributor.distributorContactEmail" class="form-control" placeholder="Enter Distributor Contact Email Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="distributorHomePhone">Distributor Home Phone</label>
+                    <input id="distributorHomePhone" ng-model="vm.distributor.distributorHomePhone" class="form-control" placeholder="Enter Distributor Home Phone Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="distributorFaxNumber">Distributor Fax Number</label>
+                    <input id="distributorFaxNumber" ng-model="vm.distributor.distributorFaxNumber" class="form-control" placeholder="Enter Distributor Fax Number Here" required />
+                </div>
+                <button ng-click="vm.saveDistributor()" ng-disabled="newDistributorForm.$invalid" type="submit" class="btn btn-primary">Save</button>
+            </fieldset>
+        </form>
+    </div>
+    <div class="row">
+
+        <legend>All Distributors</legend>
+    </div>
+    <div class="row">
+        <button ng-click="vm.editSelectedRow()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Edit Selected Row</button>
+        <button ng-click="vm.deleteDistributor()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Delete Selected Row</button>
+    </div>
+    <div class="row">
+        <div id="distributorGrid" ui-grid="vm.gridOptions" ui-grid-selection class="uigrid"></div>
+    </div>
+</div>

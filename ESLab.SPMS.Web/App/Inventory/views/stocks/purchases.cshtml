@@ -1,0 +1,13 @@
+﻿<div ng-controller="stockController as vm">
+
+    <div class="row">
+        <legend>Open Purchases List</legend>
+    </div>
+    <div class="row">
+        <button ng-click="vm.receiveProduct()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Receive Product</button>
+        <button ng-click="vm.stockDetails()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Stock Details</button>
+    </div>
+    <div class="row">
+        <div id="purchaseGrid" ui-grid="vm.gridOptions" ui-grid-selection class="uigrid"></div>
+    </div>
+</div>

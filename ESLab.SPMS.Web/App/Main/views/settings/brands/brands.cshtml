@@ -1,0 +1,40 @@
+﻿<div ng-controller="brandController as vm">
+    <div class="row">
+
+
+        <form id="frmNewBrand" role="form" name="newBrandForm" class="form-inline" novalidate>
+            <fieldset>
+                <legend>Add Brand</legend>
+                <input id="brandId" ng-model="vm.brand.id" type="hidden" />
+                <div class="form-group">
+                    <label for="brandCode">Code</label>
+                    <input id="brandCode" name="code" ng-model="vm.brand.brandCode" class="form-control" placeholder="Enter Brand Code Here" required
+                           unique-code service-name="abp.services.app.brand" />
+
+                </div>
+                <div class="form-group">
+                    <label for="brandName">Name</label>
+                    <input id="brandName" ng-model="vm.brand.brandName" class="form-control" placeholder="Enter Brand Name Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="brandType">Brand Type</label>
+                    <select id="brandType" name="sltBrandType" ng-model="vm.selectedBrandType" ng-options=" option.name for option in vm.brandType track by option.id " required>
+                        <option value="">Select Brand Type</option>
+                    </select>
+                    <span class="error"  ng-show="newBrandForm.sltBrandType.$dirty && newBrandForm.sltBrandType.$invalid">Select Brand Type</span>
+                </div>
+                <button ng-click="vm.saveBrand()" ng-disabled="newBrandForm.$invalid" type="submit" class="btn btn-primary">Save</button>
+            </fieldset>
+        </form>
+        <p class="help-block" ng-show="newBrandForm.code.$error.unique && newBrandForm.code.$dirty">BrandCode is already taken.</p>
+    </div>
+    <div class="row">
+        <legend>All Brands</legend>
+    </div>
+    <div class="row">
+        <button ng-click="vm.editSelectedRow()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Edit Selected Row</button>
+    </div>
+    <div class="row">
+        <div id="brandGrid" ui-grid="vm.gridOptions" ui-grid-selection class="uigrid"></div>
+    </div>
+</div>

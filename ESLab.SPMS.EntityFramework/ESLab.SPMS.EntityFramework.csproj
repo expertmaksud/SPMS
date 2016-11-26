@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ESLab.SPMS</RootNamespace>
+    <AssemblyName>ESLab.SPMS.EntityFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abp, Version=0.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.0.7.3.0\lib\net451\Abp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.EntityFramework, Version=0.7.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.EntityFramework.0.7.2.0\lib\net451\Abp.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Zero, Version=0.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.0.7.3.0\lib\net451\Abp.Zero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Zero.EntityFramework, Version=0.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.EntityFramework.0.7.3.0\lib\net451\Abp.Zero.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.LoggingFacility.3.3.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.DynamicFilters, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.DynamicFilters.1.4.2\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Concurrent, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Concurrent.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Enlightenment, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Enlightenment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.0.34.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Immutable.1.0.34\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityFramework\Repositories\BrandRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\CompanyRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\DistributorRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\FinishProductFormulaRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\FinishProductRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\FreightRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\ProductApiRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\ProductGradeRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\ProductCategoryRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\ProductUnitRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\RawMaterialRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\RawMaterialTypeRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\VendorRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\WarehouseRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\ZoneRepository.cs" />
+    <Compile Include="EntityFramework\SPMSDbContext.cs" />
+    <Compile Include="EntityFramework\Repositories\SPMSRepositoryBase.cs" />
+    <Compile Include="Migrations\201506210746108_AbpZero_Initial.cs" />
+    <Compile Include="Migrations\201506210746108_AbpZero_Initial.Designer.cs">
+      <DependentUpon>201506210746108_AbpZero_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510041216318_InitialCreate.cs" />
+    <Compile Include="Migrations\201510041216318_InitialCreate.Designer.cs">
+      <DependentUpon>201510041216318_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081955397_09102015.cs" />
+    <Compile Include="Migrations\201510081955397_09102015.Designer.cs">
+      <DependentUpon>201510081955397_09102015.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510150629502_BrandTypeAndRawMaterials.cs" />
+    <Compile Include="Migrations\201510150629502_BrandTypeAndRawMaterials.Designer.cs">
+      <DependentUpon>201510150629502_BrandTypeAndRawMaterials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510211320020_Purchase_PurchaseItem.cs" />
+    <Compile Include="Migrations\201510211320020_Purchase_PurchaseItem.Designer.cs">
+      <DependentUpon>201510211320020_Purchase_PurchaseItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510311729417_Warehouse.cs" />
+    <Compile Include="Migrations\201510311729417_Warehouse.Designer.cs">
+      <DependentUpon>201510311729417_Warehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511011826241_Stock.cs" />
+    <Compile Include="Migrations\201511011826241_Stock.Designer.cs">
+      <DependentUpon>201511011826241_Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511040600436_FinishProduct With Formula.cs" />
+    <Compile Include="Migrations\201511040600436_FinishProduct With Formula.Designer.cs">
+      <DependentUpon>201511040600436_FinishProduct With Formula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511130457237_UpdatePurchaseItem.cs" />
+    <Compile Include="Migrations\201511130457237_UpdatePurchaseItem.Designer.cs">
+      <DependentUpon>201511130457237_UpdatePurchaseItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511161546121_UpdateStock.cs" />
+    <Compile Include="Migrations\201511161546121_UpdateStock.Designer.cs">
+      <DependentUpon>201511161546121_UpdateStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511170542292_Update Raw Material &amp; Product Unit.cs" />
+    <Compile Include="Migrations\201511170542292_Update Raw Material &amp; Product Unit.Designer.cs">
+      <DependentUpon>201511170542292_Update Raw Material &amp; Product Unit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511191226193_UpdateStockDensity.cs" />
+    <Compile Include="Migrations\201511191226193_UpdateStockDensity.Designer.cs">
+      <DependentUpon>201511191226193_UpdateStockDensity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="SPMSDataModule.cs" />
+    <Compile Include="Migrations\SeedData\DefaultTenantRoleAndUserBuilder.cs" />
+    <Compile Include="Migrations\SeedData\InitialDataBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ESLab.SPMS.Core\ESLab.SPMS.Core.csproj">
+      <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
+      <Name>ESLab.SPMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ESLab.SPMS.Inventory.Domain\ESLab.SPMS.Inventory.Domain.csproj">
+      <Project>{c5559a04-4513-4ff6-86ce-e63ac7d3a217}</Project>
+      <Name>ESLab.SPMS.Inventory.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ESLab.SPMS.Production.Domain\ESLab.SPMS.Production.Domain.csproj">
+      <Project>{3b26d7db-87cf-4eaa-9ff5-1629f0b26e14}</Project>
+      <Name>ESLab.SPMS.Production.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ESLab.SPMS.Purchase.Domain\ESLab.SPMS.Procurement.Domain.csproj">
+      <Project>{cc8f22af-c19c-4e09-a0af-f9082fc725c0}</Project>
+      <Name>ESLab.SPMS.Procurement.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ESLab.SPMS.Sales.Domain\ESLab.SPMS.Sales.Domain.csproj">
+      <Project>{ff15f5b0-5067-4182-87ff-75a8e3f11e3c}</Project>
+      <Name>ESLab.SPMS.Sales.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201506210746108_AbpZero_Initial.resx">
+      <DependentUpon>201506210746108_AbpZero_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510041216318_InitialCreate.resx">
+      <DependentUpon>201510041216318_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081955397_09102015.resx">
+      <DependentUpon>201510081955397_09102015.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510150629502_BrandTypeAndRawMaterials.resx">
+      <DependentUpon>201510150629502_BrandTypeAndRawMaterials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510211320020_Purchase_PurchaseItem.resx">
+      <DependentUpon>201510211320020_Purchase_PurchaseItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510311729417_Warehouse.resx">
+      <DependentUpon>201510311729417_Warehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511011826241_Stock.resx">
+      <DependentUpon>201511011826241_Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511040600436_FinishProduct With Formula.resx">
+      <DependentUpon>201511040600436_FinishProduct With Formula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511130457237_UpdatePurchaseItem.resx">
+      <DependentUpon>201511130457237_UpdatePurchaseItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511161546121_UpdateStock.resx">
+      <DependentUpon>201511161546121_UpdateStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511170542292_Update Raw Material &amp; Product Unit.resx">
+      <DependentUpon>201511170542292_Update Raw Material &amp; Product Unit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511191226193_UpdateStockDensity.resx">
+      <DependentUpon>201511191226193_UpdateStockDensity.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

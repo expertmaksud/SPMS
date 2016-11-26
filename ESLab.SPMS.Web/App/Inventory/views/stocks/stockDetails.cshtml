@@ -1,0 +1,11 @@
+﻿<div ng-controller="stockController as vm">
+    <div class="row">
+
+        <fieldset>
+            <legend>Stock Details </legend>
+            <input id="purchaseId" ng-model="vm.purchase.id" type="hidden" />
+        </fieldset>
+        <div id="stockGrid" ui-grid="vm.stockGridOptions" ui-grid-selection class="uigrid"></div>
+
+    </div>
+</div>

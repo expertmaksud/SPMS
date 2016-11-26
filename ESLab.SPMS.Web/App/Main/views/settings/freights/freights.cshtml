@@ -1,0 +1,31 @@
+﻿<div ng-controller="freightController as vm">
+    <div class="row">
+        <form id="frmNewFreight" role="form" name="newFreightForm" class="form-inline" novalidate>
+            <fieldset>
+                <legend>Add Freight</legend>
+                <input id="freightId" ng-model="vm.freight.id" type="hidden" />
+                <div class="form-group">
+                    <label for="freightCode">Freight Code</label>
+                    <input id="freightCode" ng-model="vm.freight.freightCode" class="form-control" placeholder="Enter Freight Code Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="freightName">Freight Name</label>
+                    <input id="freightName" ng-model="vm.freight.freightName" class="form-control" placeholder="Enter Freight Name Here" required />
+                </div>
+                <button ng-click="vm.saveFreight()" ng-disabled="newFreightForm.$invalid" type="submit" class="btn btn-primary">Save</button>
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="row">
+
+        <legend>All Freights</legend>
+    </div>
+    <div class="row">
+        <button ng-click="vm.editSelectedRow()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Edit Selected Row</button>
+        <button ng-click="vm.deleteFreight()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Delete Selected Row</button>
+    </div>
+    <div class="row">
+        <div id="freightGrid" ui-grid="vm.gridOptions" ui-grid-selection class="uigrid"></div>
+    </div>
+</div>

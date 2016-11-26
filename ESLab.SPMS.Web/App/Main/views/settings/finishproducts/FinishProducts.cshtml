@@ -1,0 +1,74 @@
+﻿<div ng-controller="finishProductController as vm">
+    <div class="row">
+        <form id="frmNewFinishProduct" role="form" name="newFinishProductForm" class="form-horizontal" novalidate>
+            <fieldset>
+                <legend>Add Finish Product</legend>
+                <input id="finishProductId" ng-model="vm.finishProduct.id" type="hidden" />                
+                <div class="form-group">
+                    <label for="brandType">Brand</label>
+                    <select id="brandType" name="sltBrandType" ng-model="vm.selectedBrand" ng-options=" option.brandName for option in vm.brands track by option.id" required>
+                        <option value="">Select Brand</option>
+                    </select>
+                    <span class="error" ng-show="newBrandForm.sltBrandType.$dirty && newBrandForm.sltBrandType.$invalid">Select Brand Type</span>
+                </div>
+                <div class="form-group">
+                    <label for="finishProductProductName">Product Name</label>
+                    <input id="finishProductProductName" ng-model="vm.finishProduct.productName" class="form-control" placeholder="Enter Product Name Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="productGrade">Product Grade</label>
+                    <select id="productGrade" ng-model="vm.selectedProductGrade" ng-options="option.gradeName for option in vm.productGrades track by option.id">
+                        <option value="">---Please select---</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productApi">Product API</label>
+                    <select id="productApi" ng-model="vm.selectedProductApi" ng-options="option.apiName for option in vm.productApis track by option.id">
+                        <option value="">---Please select---</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">Product Category</label>
+                    <select id="productCategory" ng-model="vm.selectedProductCategory" ng-options="option.categoryName for option in vm.productCategories track by option.id">
+                        <option value="">---Please select---</option>
+                    </select>
+                </div>                
+                <div class="form-group">
+                    <label for="packSize">Pack Size</label>
+                    <input id="packSize" ng-model="vm.finishProduct.packSize" class="form-control" placeholder="Enter Pack Size Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="multiplier">Multiplier</label>
+                    <input id="multiplier" ng-model="vm.finishProduct.multiplier" class="form-control" placeholder="Enter Multiplier Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="productUnit">Product Unit</label>
+                    <select id="productUnit" ng-model="vm.selectedProductUnit" ng-options="option.unitName for option in vm.productUnits track by option.id">
+                        <option value="">---Please select---</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mrp">MRP</label>
+                    <input id="mrp" ng-model="vm.finishProduct.mrp" class="form-control" placeholder="Enter MRP Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="reOrderPoint">Re Order Point</label>
+                    <input id="reOrderPoint" ng-model="vm.finishProduct.reOrderPoint" class="form-control" placeholder="Enter Re Order Point Here" required />
+                </div>
+
+                <button ng-click="vm.saveFinishProduct()" ng-disabled="newFinishProductForm.$invalid" type="submit" class="btn btn-primary">Save</button>
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="row">
+        <legend>All Finish Products</legend>
+    </div>
+    <div class="row">
+        <button ng-click="vm.editSelectedRow()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Edit Selected Row</button>
+        <button ng-click="vm.deleteFinishProduct()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Delete Selected Row</button>
+    </div>
+    <div class="row">
+        <div id="finishProductGrid" ui-grid="vm.gridOptions" ui-grid-selection class="uigrid"></div>
+    </div>
+</div>

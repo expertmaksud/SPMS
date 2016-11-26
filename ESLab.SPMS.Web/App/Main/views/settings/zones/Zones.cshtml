@@ -1,0 +1,33 @@
+﻿<div ng-controller="zoneController as vm">
+    <div class="row">
+
+
+        <form id="frmNewZone" role="form" name="newZoneForm" class="form-inline" novalidate>
+            <fieldset>
+                <legend>Add Zone</legend>
+                <input id="zoneId" ng-model="vm.zone.id" type="hidden" />
+                <div class="form-group">
+                    <label for="zoneCode">ZoneCode</label>
+                    <input id="zoneCode" ng-model="vm.zone.zoneCode" class="form-control" placeholder="Enter Zone Code Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="zoneName">Zone Name</label>
+                    <input id="zoneName" ng-model="vm.zone.zoneName" class="form-control" placeholder="Enter Zone Name Here" required />
+                </div>
+                <button ng-click="vm.saveZone()" ng-disabled="newZoneForm.$invalid" type="submit" class="btn btn-primary">Save</button>
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="row">
+        
+        <legend>All Zones</legend>
+    </div>
+    <div class="row">
+        <button ng-click="vm.editSelectedRow()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Edit Selected Row</button>
+        <button ng-click="vm.deleteZone()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Delete Selected Row</button>
+    </div>
+    <div class="row">
+        <div id="zoneGrid" ui-grid="vm.gridOptions" ui-grid-selection class="uigrid"></div>
+    </div>
+</div>

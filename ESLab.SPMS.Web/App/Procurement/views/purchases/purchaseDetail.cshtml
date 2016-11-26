@@ -1,0 +1,74 @@
+﻿<div ng-controller="purchaseController as vm">
+    <div class="row">
+        <form id="frmPurchaseDetail" role="form" name="detailPurcahseForm" class="form-horizontal" novalidate>
+            <fieldset>
+                <legend>Purchaes Details (LC/PO)</legend>
+                <input id="purchaseId" ng-model="vm.purchase.id" type="hidden" />
+                <div class="form-group">
+                    <label for="purchaseType">Purchase Type</label>
+                    <select id="purchaseType" ng-model="vm.selectedPurchaseType" ng-options="option.name for option in vm.purchaseTypes track by option.id" disabled>
+                        <option value="">---Please select---</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="lcNumber">LC Number</label>
+                            <input id="lcNumber" ng-model="vm.purchase.lcNumber" class="form-control" placeholder="Enter LC Number Here" disabled />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lcDate">LC Date</label>
+                            <input type="date" id="lcDate" ng-model="vm.purchase.lcDate" class="form-control" name="lcDate" disabled />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="poNumber">PO Number</label>
+                            <input id="poNumber" ng-model="vm.purchase.poNumber" class="form-control" placeholder="Enter PO Number Here" disabled />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="poDate">PO Date</label>
+                            <input type="date" id="poDate" ng-model="vm.purchase.poDate" class="form-control" disabled />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="etd">ETD</label>
+                            <input type="date" id="etd" ng-model="vm.purchase.etd" class="form-control" disabled />
+                        </div>
+                        <div class="col-md-6">
+
+                            <label for="eta">ETA</label>
+                            <input type="date" id="eta" ng-model="vm.purchase.eta" class="form-control" disabled />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="vendor">Vendor</label>
+                    <select id="vendor" ng-model="vm.selectedVendor" ng-options="option.vendorName for option in vm.vendors track by option.id" disabled>
+                        <option value="">---Please select---</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="remarks">Remarks</label>
+                    <input id="remarks" ng-model="vm.purchase.remarks" class="form-control" placeholder="Enter Remarks Here" disabled />
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="row">
+
+        <fieldset>
+            <legend>Purchase (LC/PO) Details</legend>
+        </fieldset>
+        <div id="purchaseItemGrid" ui-grid="vm.gridOptions" ui-grid-selection class="uigrid"></div>
+
+    </div>
+</div>

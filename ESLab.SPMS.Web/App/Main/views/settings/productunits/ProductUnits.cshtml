@@ -1,0 +1,35 @@
+﻿<div ng-controller="productUnitController as vm">
+    <div class="row">
+        <form id="frmNewProductUnit" role="form" name="newProductUnitForm" class="form-inline" novalidate>
+            <fieldset>
+                <legend>Add Product Unit</legend>
+                <input id="unitId" ng-model="vm.productUnit.id" type="hidden" />
+                <div class="form-group">
+                    <label for="unitCode">Unit Code</label>
+                    <input id="unitCode" ng-model="vm.productUnit.unitCode" class="form-control" placeholder="Enter Product Unit Code Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="unitName">Unit Name</label>
+                    <input id="unitName" ng-model="vm.productUnit.unitName" class="form-control" placeholder="Enter Product Unit Name Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="unitToKg">Unit To KG</label>
+                    <input id="unitToKg" ng-model="vm.productUnit.unitToKg" class="form-control" placeholder="Enter Unit Conversion To KG Here" required />
+                </div>
+                <button ng-click="vm.saveProductUnit()" ng-disabled="newProductUnitForm.$invalid" type="submit" class="btn btn-primary">Save</button>
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="row">
+
+        <legend>All Product Units</legend>
+    </div>
+    <div class="row">
+        <button ng-click="vm.editSelectedRow()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Edit Selected Row</button>
+        <button ng-click="vm.deleteProductUnit()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Delete Selected Row</button>
+    </div>
+    <div class="row">
+        <div id="productUnitGrid" ui-grid="vm.gridOptions" ui-grid-selection class="uigrid"></div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+﻿using Abp.Application.Services.Dto;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ESLab.SPMS.Zones.Dtos
+{
+   public class CreateZoneInput : IInputDto
+    {
+        [Required]
+        public string ZoneCode { get; set; }
+
+        [Required]
+        public string ZoneName { get; set; }
+        public long CreatorUserId { get; set; }
+
+    }
+}

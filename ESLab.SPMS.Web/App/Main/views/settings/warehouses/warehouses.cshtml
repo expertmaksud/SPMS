@@ -1,0 +1,39 @@
+﻿<div ng-controller="warehouseController as vm">
+    <div class="row">
+        <form id="frmNewWarehouse" role="form" name="newWarehouseForm" class="form-horizontal" novalidate>
+            <fieldset>
+                <legend>Add Warehouse</legend>
+                <input id="warehouseId" ng-model="vm.warehouse.id" type="hidden" />
+                <div class="form-group">
+                    <label for="warehouseCode">Warehouse Code</label>
+                    <input id="warehouseCode" ng-model="vm.warehouse.warehouseCode" class="form-control" placeholder="Enter Warehouse Code Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="warehouseName">Warehouse Name</label>
+                    <input id="warehouseName" ng-model="vm.warehouse.warehouseName" class="form-control" placeholder="Enter Warehouse Name Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="warehouseAddress">Warehouse Address</label>
+                    <input id="warehouseAddress" ng-model="vm.warehouse.warehouseAddress" class="form-control" placeholder="Enter Warehouse Address Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="warehousePhone">Warehouse Phone</label>
+                    <input id="warehousePhone" ng-model="vm.warehouse.warehousePhone" class="form-control" placeholder="Enter Warehouse Phone Here" required />
+                </div>
+                <button ng-click="vm.saveWarehouse()" ng-disabled="newWarehouseForm.$invalid" type="submit" class="btn btn-primary">Save</button>
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="row">
+
+        <legend>All Warehouses</legend>
+    </div>
+    <div class="row">
+        <button ng-click="vm.editSelectedRow()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Edit Selected Row</button>
+        <button ng-click="vm.deleteWarehouse()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Delete Selected Row</button>
+    </div>
+    <div class="row">
+        <div id="warehouseGrid" ui-grid="vm.gridOptions" ui-grid-selection class="uigrid"></div>
+    </div>
+</div>

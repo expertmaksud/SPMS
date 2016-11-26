@@ -1,0 +1,33 @@
+﻿<div ng-controller="productGradeController as vm">
+    <div class="row">
+
+
+        <form id="frmNewProductGrade" role="form" name="newProductGradeForm" class="form-inline" novalidate>
+            <fieldset>
+                <legend>Add ProductGrade</legend>
+                <input id="productGradeId" ng-model="vm.productGrade.id" type="hidden" />
+                <div class="form-group">
+                    <label for="productGradeCode">ProductGradeCode</label>
+                    <input id="productGradeCode" ng-model="vm.productGrade.gradeCode" class="form-control" placeholder="Enter ProductGrade Code Here" required />
+                </div>
+                <div class="form-group">
+                    <label for="productGradeName">ProductGrade Name</label>
+                    <input id="productGradeName" ng-model="vm.productGrade.gradeName" class="form-control" placeholder="Enter ProductGrade Name Here" required />
+                </div>
+                <button ng-click="vm.saveProductGrade()" ng-disabled="newProductGradeForm.$invalid" type="submit" class="btn btn-primary">Save</button>
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="row">
+
+        <legend>All ProductGrades</legend>
+    </div>
+    <div class="row">
+        <button ng-click="vm.editSelectedRow()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Edit Selected Row</button>
+        <button ng-click="vm.deleteProductGrade()" class="btn btn-primary" ng-disabled="vm.disableEdit" style="margin:10px 0 10px 0">Delete Selected Row</button>
+    </div>
+    <div class="row">
+        <div id="productGradeGrid" ui-grid="vm.gridOptions" ui-grid-selection class="uigrid"></div>
+    </div>
+</div>
